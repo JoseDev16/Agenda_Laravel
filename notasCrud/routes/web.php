@@ -20,3 +20,5 @@ Route::delete('/delete/{id}', 'NotaController@destroy')->name('eliminar');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/{provider}', 'SocialController@redirect');
+Route::get('auth/{provider}/callback', 'SocialController@callback');

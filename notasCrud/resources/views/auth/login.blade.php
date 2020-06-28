@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="fb-root"></div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -56,10 +57,18 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+                        
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
+
+                                
+                            </div>
+                        </div>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('F orgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>
