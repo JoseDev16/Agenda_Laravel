@@ -18,13 +18,14 @@ class CreateNotasTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
         });
 
-        Schema::table('notas', function($table) {
-            $table->dateTime('fecha');
-            $table->boolean('terminado');
-
-        });
+       
 
     }
 
@@ -37,9 +38,6 @@ class CreateNotasTable extends Migration
     {
         Schema::dropIfExists('notas');
 
-        Schema::table('notas', function($table) {
-            $table->dateTime('fecha');
-            $table->boolean('terminado');
-        });
+        
     }
 }

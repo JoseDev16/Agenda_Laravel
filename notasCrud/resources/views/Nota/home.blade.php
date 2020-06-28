@@ -69,7 +69,7 @@
 
         <!-- inicio fila formulario-->
             <div class="col-md-4">
-                <h3 class=" text-center pb-5"> Agregar Nota </h3>
+                <h3 class=" text-center pb-5"> Agregar Nota para {{ Auth::user()->name }} </h3>
 
                 <form action="{{ route('store') }}" method="POST">
                     @csrf

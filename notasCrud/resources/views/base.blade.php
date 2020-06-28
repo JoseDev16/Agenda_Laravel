@@ -23,6 +23,7 @@
             <img src= {{ asset('img/escritura.png') }} width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
              Notas
             </a>
+            
         </nav>
 
     </header>

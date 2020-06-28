@@ -12,10 +12,10 @@ class NotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $notas=Nota::paginate(3);
+        $notas=Nota::where('user_id',$request->user()->id )->paginate(3);
         return \view('Nota/home',compact('notas'));
     }
 
@@ -57,6 +57,7 @@ class NotaController extends Controller
             $check = 0;
         }
         $nt->terminado= $check;
+        $nt->user_id = $request->user()->id;
         
 
         

@@ -15,7 +15,7 @@ class AddFechayterminado2ToNotasTable extends Migration
     {
         Schema::table('notas', function (Blueprint $table) {
             //
-            $table->dateTime('fecha')->nulleabe();
+            $table->date('fecha')->nulleabe();
             $table->boolean('terminado')->nulleabe();
         });
     }
